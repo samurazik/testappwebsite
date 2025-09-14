@@ -24,7 +24,9 @@ img = Image.open("./Backgrounds/LOGO.jpg")
 img = img.resize((300, 75))
 container.image(img)
 
-openai_api_key = "sk-RnGKIPPPQ_LyjszViG72N-H9oj4sUjVSwtHdGMU7kZT3BlbkFJIKauUeLelBXvf0C_NFagaKl6UO61Jg9GkSOPbFfKEA"
+import os
+openai_api_key = os.getenv("OPENAI_API_KEY")
+gnews_api_key = os.getenv("GNEWS_API_KEY")
 
 class Background:
     def __init__(self, img):
@@ -189,3 +191,4 @@ class Fundamental:
 if __name__ == "__main__":
     fundamental = Fundamental()
     asyncio.run(fundamental.run())
+
